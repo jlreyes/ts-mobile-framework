@@ -99,8 +99,8 @@ A Page holds a PageView which represents and holds the HTML for this page.
 A PageViews HTML is represented by a dust template. A pageview must provide
 the dust template name to inflate when the pageview is inflated.
 
-The PageView for a page must be set in the <pre>onCreate</pre> method of a
-page. The dust template will then be inflated and the <pre>onInflation</pre>
+The PageView for a page must be set in the <code>onCreate</code> method of a
+page. The dust template will then be inflated and the <code>onInflation</code>
 method in the PageView will be called passing the inflated HTML as a JQuery
 object. All HTML manipulation should happen to the given JQuery element (this
 is true in general) because it is not guaranteed that the JQuery is actually
@@ -116,7 +116,7 @@ class MyPageView extends PageView {
 }
 ```
 
-After inflation, <pre>onResume</pre> is called in the Page.
+After inflation, <code>onResume</code> is called in the Page.
 
 Page Dust Templates
 ================================================================================
@@ -235,12 +235,12 @@ class MyPage extends Page {
 }
 ```
 
-Another way to switch between pages is to call <pre>app.back(data)</pre>.
+Another way to switch between pages is to call <code>app.back(data)</code>.
 This will cause the application to go to the previous page in history. You can
 optionally pass a hint to this method so the app will go back to the given
 page if there is no more pages in memory (this may change in the future).
 
-Furthermore, you can pass data to <pre>app.back(data)</pre> that will be
+Furthermore, you can pass data to <code>app.back(data)</code> that will be
 passed to the previous application in memory as intent data. This allows
 you to, for example, start a dialog that asks the user for text input. The
 result will be passed to the previous page in memory in onResume.
