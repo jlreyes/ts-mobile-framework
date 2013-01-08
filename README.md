@@ -99,14 +99,14 @@ A Page holds a PageView which represents and holds the HTML for this page.
 A PageViews HTML is represented by a dust template. A pageview must provide
 the dust template name to inflate when the pageview is inflated.
 
-The PageView for a page must be set in the <code>onCreate</code> method of a
-page. The dust template will then be inflated and the <code>onInflation</code>
+The PageView for a page must be set in the <pre>onCreate</pre> method of a
+page. The dust template will then be inflated and the <pre>onInflation</pre>
 method in the PageView will be called passing the inflated HTML as a JQuery
 object. All HTML manipulation should happen to the given JQuery element (this
 is true in general) because it is not guaranteed that the JQuery is actually
 within the DOM. 
 
-<code>
+<pre>
 class MyPageView extends PageView {
   ...
   public onInflation(jquery : JQuery) {
@@ -114,9 +114,9 @@ class MyPageView extends PageView {
   }
   ...
 }
-</code>
+</pre>
 
-After inflation, <code>onResume</code> is called in the Page.
+After inflation, <pre>onResume</pre> is called in the Page.
 
 Page Dust Templates
 ================================================================================
@@ -126,7 +126,7 @@ using the built in classes and structure for an optimal experience.
 Here is an example of a generic page (taken from the join room page in
 Math Canvas (https://github.com/jlreyes/mathcanvas).
 
-<code>
+<pre>
 <div class="page">
     <div class="header">
         <button class="icon left">
@@ -166,7 +166,7 @@ Math Canvas (https://github.com/jlreyes/mathcanvas).
         <h1>{username}</h1>
     </div>
 </div>
-</code>
+</pre>
 
 To see all the HTML options view the templates in Math Canvas.
 (https://github.com/jlreyes/mathcanvas).
@@ -194,7 +194,7 @@ Currently available dialogs:
 The only difference between a page and a dialog is the HTML structure. Here is 
 an example of a generic dialog.
 
-<code>
+<pre>
 <div class="dialog">
     <div class="dialog-background"></div>
     <div class="dialog-box">
@@ -202,7 +202,7 @@ an example of a generic dialog.
         <div class="body"></div>
     </div>
 </div>
-</code>
+</pre>
 
 
 Intents
@@ -211,7 +211,7 @@ Switching between different pages is accomplished through Intents. When you want
 to go to a given page you give the application an intent which the application
 uses to launch the page for you.
 
-<code>
+<pre>
 class MyPage extends Page {
   ...
   public myMethod() {
@@ -221,11 +221,11 @@ class MyPage extends Page {
   }
   ...
 }
-</code>
+</pre>
 
 When an page is started, it can obtain and use the passed intent data.
 
-<code>
+<pre>
 class MyPage extends Page {
   ...
   public onCreate(intentData? : any) {
@@ -233,19 +233,19 @@ class MyPage extends Page {
   }
   ...
 }
-</code>
+</pre>
 
-Another way to switch between pages is to call <code>app.back(data)</code>.
+Another way to switch between pages is to call <pre>app.back(data)</pre>.
 This will cause the application to go to the previous page in history. You can
 optionally pass a hint to this method so the app will go back to the given
 page if there is no more pages in memory (this may change in the future).
 
-Furthermore, you can pass data to <code>app.back(data)</code> that will be
+Furthermore, you can pass data to <pre>app.back(data)</pre> that will be
 passed to the previous application in memory as intent data. This allows
 you to, for example, start a dialog that asks the user for text input. The
 result will be passed to the previous page in memory in onResume.
 
-<code>
+<pre>
 class MyPage extends Page {
   ...
   public onResume(intentData? : any) {
@@ -254,24 +254,24 @@ class MyPage extends Page {
   }
   ...
 }
-</code>
+</pre>
 
 Creating a Custom Page
 ================================================================================
 1. Extend the Page class.
 
-<code>
+<pre>
 class MyPage extends Page {
     public onCreate(intentData : any) : void {
         /* Create the view */
         this.setView(new MyView(this));
     }
 }
-</code>
+</pre>
 
 2. Extend the PageView class.
 
-<code>
+<pre>
 class MyView extends PageView {
     constructor(page : MyPage) {
         var app : App = page.getApp();
@@ -285,7 +285,7 @@ class MyView extends PageView {
       /* Here is where we modify this view's HTML programmatically */
     }
 }
-</code>
+</pre>
 
 3. Compile the Typescript files and include them in your HTML.
 
@@ -293,12 +293,12 @@ class MyView extends PageView {
    HTML and that it has the same name that you pass to the super in the MyView 
    constructor.
 
-<code>
+<pre>
 <div class="page">
   <div class="header"></div>
   <div class="body"></body>
 </div>
-</code>
+</pre>
 
 Examples
 ================================================================================
