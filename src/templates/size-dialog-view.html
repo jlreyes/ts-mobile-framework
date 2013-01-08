@@ -1,0 +1,30 @@
+<div class="dialog">
+    <div class="dialog-background"></div>
+    <div class="dialog-box">
+        <div class="header">
+            <h1>Choose a Size</h1>
+        </div>
+        <div class="body" style="text-align:center;">
+            <div class="section" style="text-align: center;">
+                <canvas 
+                    id="dialog-size-canvas"
+                    style="display: inline-block;"
+                    width="100" height="100">
+                </canvas>
+                <br>
+                <input 
+                    id="dialog-size-size"
+                    style="display: inline-block;"
+                    type="range"
+                    min="1"
+                    max="25"
+                    step="1" />
+            </div>
+            <div id="button-container">
+                <button id="dialog-size-ok" class="full">
+                    Okay
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
