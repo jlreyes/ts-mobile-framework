@@ -21,15 +21,15 @@ features. I'll also fix any reported bugs.
 Usage
 ================================================================================
 Prereqs:
-  -Normalize (http://necolas.github.com/normalize.css/)
-  -Jquery
-  -Hammer JS (http://eightmedia.github.com/hammer.js/)
-  -Dust JS (https://github.com/linkedin/dustjs)
-  -Font Awesome (http://fortawesome.github.com/Font-Awesome/)
+  * Normalize (http://necolas.github.com/normalize.css/)
+  * Jquery
+  * Hammer JS (http://eightmedia.github.com/hammer.js/)
+  * Dust JS (https://github.com/linkedin/dustjs)
+  * Font Awesome (http://fortawesome.github.com/Font-Awesome/)
 
 Optional:
-  -Spectrum JS (for color dialog http://bgrins.github.com/spectrum/)
-  -Socket.io (for the Socket Class http://socket.io/)
+  * Spectrum JS (for color dialog http://bgrins.github.com/spectrum/)
+  * Socket.io (for the Socket Class http://socket.io/)
 
 Use the included index.html file for your HTML. You need to provide the scripts
 and css above. 
@@ -183,13 +183,13 @@ page.
 
 You can view the required intent data for the dialogs in src/dialog.ts.
 Currently available dialogs:
--Simple Dialog
--Select Dialog
--EditText Dialog
--List Dialog
--Input Dialog
--Color Dialog (requires spectrum (http://bgrins.github.com/spectrum/))
--Size Dialog
+* Simple Dialog
+* Select Dialog
+* EditText Dialog
+* List Dialog
+* Input Dialog
+* Color Dialog (requires spectrum (http://bgrins.github.com/spectrum/))
+* Size Dialog
 
 The only difference between a page and a dialog is the HTML structure. Here is 
 an example of a generic dialog.
