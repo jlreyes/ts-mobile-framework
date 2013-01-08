@@ -106,7 +106,7 @@ object. All HTML manipulation should happen to the given JQuery element (this
 is true in general) because it is not guaranteed that the JQuery is actually
 within the DOM. 
 
-<pre>
+```javascript
 class MyPageView extends PageView {
   ...
   public onInflation(jquery : JQuery) {
@@ -114,7 +114,7 @@ class MyPageView extends PageView {
   }
   ...
 }
-</pre>
+```
 
 After inflation, <pre>onResume</pre> is called in the Page.
 
@@ -126,7 +126,7 @@ using the built in classes and structure for an optimal experience.
 Here is an example of a generic page (taken from the join room page in
 Math Canvas (https://github.com/jlreyes/mathcanvas).
 
-<pre>
+```html
 <div class="page">
     <div class="header">
         <button class="icon left">
@@ -166,7 +166,7 @@ Math Canvas (https://github.com/jlreyes/mathcanvas).
         <h1>{username}</h1>
     </div>
 </div>
-</pre>
+```
 
 To see all the HTML options view the templates in Math Canvas.
 (https://github.com/jlreyes/mathcanvas).
@@ -194,7 +194,7 @@ Currently available dialogs:
 The only difference between a page and a dialog is the HTML structure. Here is 
 an example of a generic dialog.
 
-<pre>
+```html
 <div class="dialog">
     <div class="dialog-background"></div>
     <div class="dialog-box">
@@ -202,7 +202,7 @@ an example of a generic dialog.
         <div class="body"></div>
     </div>
 </div>
-</pre>
+```
 
 
 Intents
@@ -211,7 +211,7 @@ Switching between different pages is accomplished through Intents. When you want
 to go to a given page you give the application an intent which the application
 uses to launch the page for you.
 
-<pre>
+```javascript
 class MyPage extends Page {
   ...
   public myMethod() {
@@ -221,11 +221,11 @@ class MyPage extends Page {
   }
   ...
 }
-</pre>
+```
 
 When an page is started, it can obtain and use the passed intent data.
 
-<pre>
+```javascript
 class MyPage extends Page {
   ...
   public onCreate(intentData? : any) {
@@ -233,7 +233,7 @@ class MyPage extends Page {
   }
   ...
 }
-</pre>
+```
 
 Another way to switch between pages is to call <pre>app.back(data)</pre>.
 This will cause the application to go to the previous page in history. You can
@@ -245,7 +245,7 @@ passed to the previous application in memory as intent data. This allows
 you to, for example, start a dialog that asks the user for text input. The
 result will be passed to the previous page in memory in onResume.
 
-<pre>
+```javascript
 class MyPage extends Page {
   ...
   public onResume(intentData? : any) {
@@ -254,24 +254,24 @@ class MyPage extends Page {
   }
   ...
 }
-</pre>
+```
 
 Creating a Custom Page
 ================================================================================
 1. Extend the Page class.
 
-<pre>
+```javascript
 class MyPage extends Page {
     public onCreate(intentData : any) : void {
         /* Create the view */
         this.setView(new MyView(this));
     }
 }
-</pre>
+```
 
 2. Extend the PageView class.
 
-<pre>
+```javascript
 class MyView extends PageView {
     constructor(page : MyPage) {
         var app : App = page.getApp();
@@ -285,7 +285,7 @@ class MyView extends PageView {
       /* Here is where we modify this view's HTML programmatically */
     }
 }
-</pre>
+```
 
 3. Compile the Typescript files and include them in your HTML.
 
@@ -293,12 +293,12 @@ class MyView extends PageView {
    HTML and that it has the same name that you pass to the super in the MyView 
    constructor.
 
-<pre>
+```html
 <div class="page">
   <div class="header"></div>
   <div class="body"></body>
 </div>
-</pre>
+```
 
 Examples
 ================================================================================
